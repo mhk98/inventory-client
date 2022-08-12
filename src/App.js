@@ -1,23 +1,32 @@
-import logo from './logo.svg';
 import './App.css';
+import Home from './Pages/Home';
+import { Routes, Route} from "react-router-dom";
+import SubCom from './Pages/SubCom';
+import SubElect from './Pages/SubElect';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import SCom from './Pages/SCom';
+import Keyboard from './Pages/Keyboard';
+import Processor from './Pages/Processor';
+import Television from './Pages/Television';
+import Refrigerator from './Pages/Refrigerator';
+import Navbar from './Pages/Navbar';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar></Navbar>
+      <Routes>
+        <Route path='/' element={<Home></Home>}></Route>
+    <Route path='/subcom' element={<SubCom></SubCom>}></Route>
+    <Route path='/subelect' element={<SubElect></SubElect>}></Route>
+    <Route path='/scom' element={<SCom></SCom>}></Route>
+    <Route path='/keyboard' element={<Keyboard></Keyboard>}></Route>
+    <Route path='/processor' element={<Processor></Processor>}></Route>
+    <Route path='/television' element={<Television></Television>}></Route>
+    <Route path='/refrigerator' element={<Refrigerator></Refrigerator>}></Route>
+      </Routes>
+      <ToastContainer />
     </div>
   );
 }
